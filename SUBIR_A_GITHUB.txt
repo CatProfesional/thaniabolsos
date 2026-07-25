@@ -1,0 +1,13 @@
+CATÁLOGO DIGITAL THANIA ÁLVAREZ
+
+1. Descomprime el archivo ZIP.
+2. En GitHub abre el repositorio thaniabolsos.
+3. Elimina los archivos viejos para evitar mezclas.
+4. Pulsa Add file > Upload files.
+5. Selecciona TODOS los archivos que están dentro de esta carpeta y súbelos juntos.
+6. index.html y las imágenes .webp deben quedar directamente en la raíz del repositorio.
+7. Conserva el archivo .nojekyll.
+8. Pulsa Commit changes y espera 1 a 3 minutos.
+9. Abre: https://catprofesional.github.io/thaniabolsos/
+
+IMPORTANTE: no cambies las extensiones ni renombres las imágenes.

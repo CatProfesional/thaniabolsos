@@ -1,236 +1,585 @@
 <!doctype html>
 <html lang="es-MX">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#17362f" />
-  <meta name="description" content="Catálogo digital de bolsos artesanales tejidos a crochet por Thania Álvarez. Piezas únicas, hechas a mano y con amor." />
-  <meta property="og:title" content="Thania Álvarez · Crochet con amor" />
-  <meta property="og:description" content="La elegancia nace de los detalles. Descubre bolsos artesanales tejidos a mano." />
-  <meta property="og:image" content="assets/images/hero.webp" />
-  <title>Thania Álvarez · Catálogo artesanal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#20382f">
+  <meta name="description" content="Catálogo digital de bolsos artesanales tejidos a crochet por Thania Álvarez. Hecho a mano, hecho con amor.">
+  <meta property="og:title" content="Thania Álvarez — Catálogo artesanal">
+  <meta property="og:description" content="La elegancia nace de los detalles. Descubre piezas tejidas a crochet con amor.">
+  <meta property="og:image" content="hero.webp">
+  <title>Thania Álvarez | Catálogo artesanal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest:#20382f; --forest-2:#142820; --cream:#f5efe4; --paper:#fbf8f1;
+      --gold:#b88a45; --wine:#6e2937; --ink:#1f2723; --muted:#6e756f; --line:rgba(32,56,47,.17);
+      --shadow:0 24px 70px rgba(24,42,35,.14); --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+    img{display:block;max-width:100%}
+    button,a{font:inherit}
+    button{color:inherit}
+    a{color:inherit;text-decoration:none}
+    .shell{width:min(1240px,calc(100% - 40px));margin-inline:auto}
+    .eyebrow{margin:0 0 14px;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;font-weight:600;color:var(--gold)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{font-family:"Italiana",Georgia,serif;font-weight:400;line-height:.96;letter-spacing:-.025em}
+    .script{font-family:"Parisienne",cursive;color:var(--gold);font-weight:400}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;border:1px solid transparent;font-weight:600;transition:.25s ease;cursor:pointer}
+    .button-primary{background:var(--forest);color:#fff;box-shadow:0 12px 32px rgba(32,56,47,.22)}
+    .button-primary:hover{transform:translateY(-2px);background:var(--forest-2)}
+    .button-outline{border-color:var(--line);background:rgba(255,255,255,.55);backdrop-filter:blur(10px)}
+    .button-outline:hover{border-color:var(--forest);background:#fff}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="app.js" defer></script>
+    .site-header{position:fixed;z-index:1000;top:16px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 28px));height:72px;padding:0 18px 0 16px;display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(255,255,255,.6);border-radius:22px;background:rgba(251,248,241,.83);backdrop-filter:blur(18px);box-shadow:0 12px 38px rgba(21,39,32,.08)}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .monogram{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;font-family:"Italiana",serif;font-size:.92rem;color:var(--forest)}
+    .brand strong{display:block;font-family:"Italiana",serif;font-size:1.22rem;font-weight:400}
+    .brand small{display:block;text-transform:uppercase;letter-spacing:.15em;font-size:.52rem;color:var(--muted);margin-top:3px}
+    nav{display:flex;align-items:center;gap:28px;font-size:.83rem}
+    nav a{position:relative}
+    nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:1px;background:var(--gold);transition:.25s}
+    nav a:hover::after{right:0}
+    .header-tools{display:flex;align-items:center;gap:8px}
+    .icon-button{position:relative;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.6);display:grid;place-items:center;cursor:pointer;transition:.2s}
+    .icon-button:hover{background:#fff;transform:translateY(-1px)}
+    .icon-button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7}
+    .fav-count{position:absolute;top:-4px;right:-2px;min-width:18px;height:18px;border-radius:9px;background:var(--wine);color:#fff;display:grid;place-items:center;font-size:.62rem;padding:0 5px}
+    .menu-button{display:none}
+
+    .hero{min-height:100svh;padding:132px 0 66px;background:
+      radial-gradient(circle at 76% 28%,rgba(184,138,69,.14),transparent 29%),
+      radial-gradient(circle at 10% 80%,rgba(110,41,55,.08),transparent 26%),var(--cream)}
+    .hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;align-items:center;gap:70px}
+    .hero-copy h1{font-size:clamp(4rem,7.5vw,7.6rem);margin:0 0 28px}
+    .hero-copy h1 .script{display:block;font-size:.68em;line-height:.8;margin-left:12%}
+    .hero-copy .lead{max-width:570px;font-size:1.08rem;line-height:1.75;color:var(--muted);margin-bottom:32px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-signature{display:flex;align-items:center;gap:15px;margin-top:38px;color:var(--muted);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+    .hero-signature::before{content:"";width:62px;height:1px;background:var(--gold)}
+    .hero-art{position:relative;min-height:650px}
+    .hero-main{position:absolute;right:3%;top:0;width:74%;height:82%;border-radius:160px 160px 28px 28px;overflow:hidden;box-shadow:var(--shadow);background:#ddd}
+    .hero-main img{width:100%;height:100%;object-fit:cover}
+    .hero-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(14,28,22,.28))}
+    .hero-small{position:absolute;left:0;bottom:3%;width:43%;aspect-ratio:1;border:10px solid var(--cream);border-radius:50%;overflow:hidden;box-shadow:var(--shadow);background:#ddd}
+    .hero-small img{width:100%;height:100%;object-fit:cover}
+    .hero-card{position:absolute;right:0;bottom:5%;width:245px;padding:24px;border-radius:22px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+    .hero-card span{display:block;font-family:"Italiana",serif;font-size:2.8rem;color:var(--gold)}
+    .hero-card strong{font-family:"Italiana",serif;font-size:1.35rem;font-weight:400}
+    .hero-card p{margin:8px 0 0;color:var(--muted);font-size:.8rem;line-height:1.55}
+    .orbit-text{position:absolute;right:-34px;top:11%;width:126px;height:126px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:#fff;box-shadow:0 18px 44px rgba(32,56,47,.25)}
+    .orbit-text span{font-family:"Parisienne",cursive;font-size:1.55rem;transform:rotate(-10deg)}
+
+    .values{position:relative;margin-top:-26px;z-index:2}
+    .values-inner{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 18px 50px rgba(31,39,35,.08);overflow:hidden}
+    .value{padding:26px 28px;display:flex;gap:15px;align-items:flex-start;border-right:1px solid var(--line)}
+    .value:last-child{border-right:0}
+    .value span{font-family:"Italiana",serif;color:var(--gold);font-size:1.2rem}
+    .value strong{display:block;font-size:.86rem;margin-bottom:5px}
+    .value small{color:var(--muted);line-height:1.45}
+
+    .story{padding:140px 0 120px}
+    .story-grid{display:grid;grid-template-columns:1fr .9fr;gap:100px;align-items:center}
+    .story-image{position:relative}
+    .story-image img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .story-image::before{content:"";position:absolute;inset:-20px 40px 20px -20px;border:1px solid var(--gold);border-radius:var(--radius);z-index:-1}
+    .story-seal{position:absolute;right:-44px;bottom:40px;background:var(--wine);color:#fff;width:142px;height:142px;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:"Italiana",serif;font-size:1.15rem;line-height:1.25;transform:rotate(8deg);box-shadow:0 16px 40px rgba(110,41,55,.2)}
+    .story-copy h2{font-size:clamp(3rem,5vw,5.5rem);margin-bottom:28px}
+    .story-copy h2 .script{display:block;font-size:.65em;margin-left:18%}
+    .story-copy>p:not(.eyebrow){font-size:1rem;line-height:1.85;color:var(--muted)}
+    .quote{margin:34px 0;padding:22px 0 22px 24px;border-left:1px solid var(--gold);font-family:"Italiana",serif;font-size:1.7rem;line-height:1.3}
+
+    .catalog{padding:120px 0;background:#eee5d7}
+    .catalog-head{display:grid;grid-template-columns:1fr .65fr;gap:50px;align-items:end;margin-bottom:52px}
+    .catalog-head h2{font-size:clamp(3.4rem,6vw,6.5rem);margin:0}
+    .catalog-head>div:last-child p{color:var(--muted);line-height:1.7}
+    .catalog-tools{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:34px}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}
+    .filter{border:1px solid rgba(32,56,47,.2);background:rgba(255,255,255,.45);padding:11px 17px;border-radius:999px;cursor:pointer;font-size:.79rem;transition:.2s}
+    .filter:hover,.filter.active{background:var(--forest);color:#fff;border-color:var(--forest)}
+    .search{display:flex;align-items:center;gap:10px;width:min(360px,100%);border-bottom:1px solid rgba(32,56,47,.35);padding:10px 2px}
+    .search svg{width:18px;height:18px;fill:none;stroke:currentColor}
+    .search input{border:0;outline:0;background:transparent;width:100%;color:var(--ink)}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+    .product-card{background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.7);border-radius:25px;padding:12px 12px 22px;transition:.35s;min-width:0}
+    .product-card:hover{transform:translateY(-7px);box-shadow:0 20px 50px rgba(32,56,47,.12);background:#fff}
+    .product-card[hidden]{display:none}
+    .product-media{position:relative;overflow:hidden;border-radius:18px;background:#e5ddcf;aspect-ratio:4/5}
+    .product-open{border:0;background:transparent;padding:0;cursor:pointer}
+    .product-media>.product-open{width:100%;height:100%}
+    .product-media img{width:100%;height:100%;object-fit:contain;transition:transform .6s ease}
+    .product-card:hover .product-media img{transform:scale(1.025)}
+    .heart{position:absolute;right:13px;top:13px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.72);background:rgba(250,247,240,.84);backdrop-filter:blur(8px);display:grid;place-items:center;cursor:pointer;z-index:2}
+    .heart svg{width:19px;fill:none;stroke:var(--forest);stroke-width:1.6}
+    .heart.active svg{fill:var(--wine);stroke:var(--wine)}
+    .product-number{position:absolute;left:14px;bottom:13px;background:var(--forest);color:#fff;border-radius:999px;padding:7px 10px;font-size:.68rem;letter-spacing:.08em}
+    .product-info{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:20px 8px 0}
+    .product-info p{margin:0 0 3px;color:var(--gold);font-size:.68rem;text-transform:uppercase;letter-spacing:.16em}
+    .product-info h3{font-family:"Italiana",serif;font-weight:400;font-size:2rem;margin:0}
+    .arrow{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);font-size:1.2rem;transition:.2s}
+    .arrow:hover{background:var(--forest);color:#fff}
+    .product-description{padding:0 8px;margin:12px 0 0;color:var(--muted);font-size:.84rem;line-height:1.65}
+    .empty{display:none;text-align:center;padding:60px;color:var(--muted)}
+    .empty.show{display:block}
+
+    .editorial{padding:120px 0;background:var(--forest);color:#fff}
+    .editorial-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+    .editorial-main,.editorial-stack article{position:relative;overflow:hidden;border-radius:26px}
+    .editorial-main{min-height:650px}
+    .editorial-stack{display:grid;gap:22px}
+    .editorial-stack article{min-height:314px}
+    .editorial img{width:100%;height:100%;object-fit:cover}
+    .editorial article::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(9,20,15,.74))}
+    .editorial-caption{position:absolute;z-index:2;left:28px;right:28px;bottom:26px}
+    .editorial-caption span{color:#dfbd84;text-transform:uppercase;letter-spacing:.18em;font-size:.66rem}
+    .editorial-caption h3{font-family:"Italiana",serif;font-weight:400;font-size:clamp(1.8rem,3vw,3.4rem);margin:7px 0 0}
+
+    .process{padding:130px 0}
+    .process-head{text-align:center;max-width:760px;margin:0 auto 55px}
+    .process-head h2{font-size:clamp(3.2rem,6vw,6rem);margin-bottom:20px}
+    .process-head p:last-child{color:var(--muted);line-height:1.7}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .step{position:relative;padding:32px 26px 30px;border:1px solid var(--line);border-radius:22px;background:#fff;min-height:245px}
+    .step>span{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--cream);font-family:"Italiana",serif;color:var(--gold);margin-bottom:38px}
+    .step h3{font-family:"Italiana",serif;font-size:1.75rem;font-weight:400;margin-bottom:12px}
+    .step p{color:var(--muted);font-size:.86rem;line-height:1.65;margin:0}
+
+    .contact{padding:0 0 70px}
+    .contact-card{display:grid;grid-template-columns:1fr .72fr;overflow:hidden;border-radius:32px;background:var(--wine);color:#fff;box-shadow:var(--shadow)}
+    .contact-copy{padding:70px}
+    .contact-copy .eyebrow{color:#e7c79a}
+    .contact-copy h2{font-size:clamp(3rem,5vw,5.3rem);margin-bottom:24px}
+    .contact-copy p{max-width:610px;line-height:1.75;color:rgba(255,255,255,.75)}
+    .contact-copy .button{margin-top:16px;background:#fff;color:var(--wine)}
+    .contact-image{position:relative;min-height:520px}
+    .contact-image img{width:100%;height:100%;object-fit:cover}
+    .contact-image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--wine),transparent 50%)}
+    footer{padding:30px 0 50px;color:var(--muted);font-size:.8rem}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:22px;border-top:1px solid var(--line);padding-top:26px}
+
+    .whatsapp-float{position:fixed;z-index:950;right:22px;bottom:22px;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 35px rgba(0,0,0,.2);transition:.2s}
+    .whatsapp-float:hover{transform:scale(1.06)}
+    .whatsapp-float svg{width:29px;height:29px;fill:currentColor}
+
+    dialog{width:min(920px,calc(100% - 26px));padding:0;border:0;border-radius:28px;background:var(--paper);box-shadow:0 28px 90px rgba(9,20,15,.35);overflow:hidden}
+    dialog::backdrop{background:rgba(8,18,14,.68);backdrop-filter:blur(8px)}
+    .modal-grid{display:grid;grid-template-columns:1fr 1fr;min-height:580px}
+    .modal-media{background:#e9e0d2;min-height:580px}
+    .modal-media img{width:100%;height:100%;object-fit:contain}
+    .modal-copy{padding:58px 48px;position:relative}
+    .modal-close{position:absolute;right:20px;top:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:1.3rem}
+    .modal-copy h2{font-size:4rem;margin:10px 0 20px}
+    .modal-copy>p:not(.eyebrow){color:var(--muted);line-height:1.75}
+    .modal-details{margin:26px 0;padding:19px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.84rem;line-height:1.6}
+    .modal-actions{display:grid;gap:10px;margin-top:28px}
+    .modal-favorite{background:transparent}
+
+    .favorites-panel{position:fixed;z-index:1200;right:16px;top:16px;bottom:16px;width:min(430px,calc(100% - 32px));border-radius:26px;background:var(--paper);box-shadow:0 28px 90px rgba(9,20,15,.32);transform:translateX(calc(100% + 40px));transition:.35s ease;padding:28px;display:flex;flex-direction:column}
+    .favorites-panel.open{transform:translateX(0)}
+    .panel-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}
+    .panel-head h2{font-size:2.6rem;margin:0}
+    .panel-close{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
+    .favorite-list{display:grid;gap:13px;overflow:auto;padding:20px 2px;flex:1}
+    .favorite-item{display:grid;grid-template-columns:76px 1fr 34px;align-items:center;gap:13px;padding:10px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .favorite-item img{width:76px;height:86px;object-fit:cover;border-radius:10px}
+    .favorite-item strong{display:block;font-family:"Italiana",serif;font-size:1.25rem;font-weight:400}
+    .favorite-item small{color:var(--muted)}
+    .favorite-item button{border:0;background:transparent;cursor:pointer;font-size:1.2rem}
+    .panel-empty{color:var(--muted);text-align:center;margin:auto;line-height:1.7}
+    .panel-actions{display:grid;gap:10px;padding-top:16px;border-top:1px solid var(--line)}
+    .panel-overlay{position:fixed;z-index:1190;inset:0;background:rgba(9,20,15,.48);opacity:0;visibility:hidden;transition:.25s}
+    .panel-overlay.show{opacity:1;visibility:visible}
+
+    .reveal{opacity:1;transform:none;transition:opacity .75s ease,transform .75s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:980px){
+      nav{position:fixed;top:96px;left:14px;right:14px;display:none;flex-direction:column;align-items:stretch;padding:18px;border-radius:20px;background:var(--paper);box-shadow:var(--shadow)}nav.open{display:flex}
+      .menu-button{display:grid}.hero-grid,.story-grid{grid-template-columns:1fr}.hero-copy{padding-top:20px}.hero-art{min-height:600px}
+      .hero-main{right:2%;width:77%}.catalog-head{grid-template-columns:1fr}.product-grid{grid-template-columns:repeat(2,1fr)}
+      .values-inner{grid-template-columns:repeat(2,1fr)}.value:nth-child(2){border-right:0}.value:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .editorial-grid{grid-template-columns:1fr}.editorial-main{min-height:580px}.editorial-stack{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:repeat(2,1fr)}.contact-card{grid-template-columns:1fr}.contact-image{min-height:380px}
+    }
+    @media(max-width:680px){
+      .shell{width:min(100% - 24px,1240px)}.site-header{height:64px;top:10px;padding:0 10px}.brand small{display:none}.monogram{width:38px;height:38px}
+      .header-tools .sound{display:none}.hero{padding-top:105px}.hero-copy h1{font-size:3.9rem}.hero-copy .lead{font-size:.96rem}
+      .hero-art{min-height:470px;margin-top:12px}.hero-main{height:86%;width:82%;border-radius:100px 100px 22px 22px}.hero-small{width:44%;border-width:7px}
+      .hero-card{width:205px;padding:18px;bottom:0}.hero-card span{font-size:2.2rem}.orbit-text{width:100px;height:100px;right:-6px;top:4%}
+      .values{margin-top:0;padding-top:18px}.values-inner{grid-template-columns:1fr}.value{border-right:0;border-bottom:1px solid var(--line)}.value:last-child{border-bottom:0}
+      .story{padding:95px 0}.story-grid{gap:64px}.story-seal{right:-4px;width:110px;height:110px;font-size:.95rem}
+      .catalog{padding:90px 0}.catalog-head{gap:22px;margin-bottom:36px}.catalog-tools{align-items:stretch;flex-direction:column}.search{width:100%}
+      .product-grid{grid-template-columns:1fr;gap:18px}.product-media{aspect-ratio:1/1.08}.product-info h3{font-size:2.1rem}
+      .editorial{padding:80px 0}.editorial-main{min-height:500px}.editorial-stack{grid-template-columns:1fr}.editorial-stack article{min-height:330px}
+      .process{padding:90px 0}.steps{grid-template-columns:1fr}.step{min-height:210px}
+      .contact-copy{padding:48px 26px}.contact-image{min-height:330px}.footer-inner{align-items:flex-start;flex-direction:column}
+      .modal-grid{grid-template-columns:1fr;max-height:88vh;overflow:auto}.modal-media{min-height:360px;height:360px}.modal-copy{padding:42px 24px 30px}.modal-copy h2{font-size:3.2rem}
+    }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
 </head>
 <body>
-  <div class="page-grain" aria-hidden="true"></div>
-
-  <header class="site-header" id="inicio">
-    <a class="brand" href="#inicio" aria-label="Ir al inicio">
-      <span class="brand-mark" aria-hidden="true">TA</span>
-      <span class="brand-copy">
-        <strong>Thania Álvarez</strong>
-        <small>hecho a mano · hecho con amor</small>
-      </span>
+  <header class="site-header">
+    <a class="brand" href="#inicio">
+      <span class="monogram">TA</span>
+      <span><strong>Thania Álvarez</strong><small>hecho a mano · hecho con amor</small></span>
     </a>
-
-    <button class="nav-toggle icon-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
-      <span></span><span></span>
-    </button>
-
-    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-      <a href="#coleccion">Colección</a>
-      <a href="#esencia">Nuestra esencia</a>
-      <a href="#proceso">Cómo pedir</a>
-      <a href="#contacto">Contacto</a>
+    <nav id="nav">
+      <a href="#coleccion">Colección</a><a href="#historia">Nuestra esencia</a><a href="#proceso">Cómo pedir</a><a href="#contacto">Contacto</a>
     </nav>
-
-    <div class="header-actions">
-      <button class="sound-toggle icon-button" type="button" aria-label="Reproducir música ambiental" aria-pressed="false">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+    <div class="header-tools">
+      <button class="icon-button sound" id="soundButton" aria-label="Reproducir música" title="Música ambiental">
+        <svg viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
       </button>
-      <button class="favorites-trigger" type="button" aria-label="Ver diseños favoritos">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
-        <span class="favorite-count">0</span>
+      <button class="icon-button" id="favoritesButton" aria-label="Abrir favoritos">
+        <svg viewBox="0 0 24 24"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg><span class="fav-count" id="favoriteCount">0</span>
       </button>
+      <button class="icon-button menu-button" id="menuButton" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
   </header>
 
   <main>
-    <section class="hero section-shell">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Artesanía que cuenta historias</p>
-        <h1>La elegancia nace de los <em>detalles.</em></h1>
-        <p class="hero-description">Bolsos tejidos a crochet, creados puntada a puntada para mujeres que valoran lo auténtico, lo especial y lo hecho con intención.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#coleccion">Descubrir la colección</a>
-          <a class="button button-ghost" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20me%20gustar%C3%ADa%20conocer%20las%20opciones%20de%20bolsos%20a%20crochet." target="_blank" rel="noopener">Crear mi pieza</a>
+    <section class="hero" id="inicio">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Catálogo artesanal 2026</p>
+          <h1>Tejido con <span class="script">amor.</span></h1>
+          <p class="lead">Bolsos creados puntada a puntada para mujeres que valoran lo auténtico. Cada pieza reúne color, textura y detalles que cuentan una historia propia.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#coleccion">Descubrir la colección <span>↓</span></a><a class="button button-outline" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20vi%20tu%20cat%C3%A1logo%20y%20quiero%20conocer%20los%20bolsos%20disponibles." target="_blank" rel="noopener">Crear mi pieza</a></div>
+          <p class="hero-signature">La elegancia nace de los detalles</p>
         </div>
-        <div class="hero-note">
-          <span class="thread-line" aria-hidden="true"></span>
-          <p>Cada pieza puede tener pequeñas variaciones: esa es la firma de lo verdaderamente artesanal.</p>
+        <div class="hero-art reveal">
+          <div class="hero-main"><img src="hero.webp" alt="Colección de bolsos Thania Álvarez"></div>
+          <div class="hero-small"><img src="azalea.webp" alt="Bolso Azalea"></div>
+          <div class="hero-card"><span>13</span><strong>Diseños con identidad</strong><p>Explora, guarda tus favoritos y consulta disponibilidad por WhatsApp.</p></div>
+          <div class="orbit-text"><span>Único como tú</span></div>
         </div>
-      </div>
-
-      <div class="hero-visual reveal">
-        <div class="hero-frame">
-          <img src="assets/images/hero.webp" alt="Colección de bolsos tejidos a crochet de Thania Álvarez" fetchpriority="high" />
-          <div class="hero-shine" aria-hidden="true"></div>
-        </div>
-        <div class="floating-seal" aria-hidden="true">
-          <span>100%</span>
-          <small>hecho a mano</small>
-        </div>
-        <p class="vertical-caption">CREA · ACTÚA · TRANSFORMA</p>
       </div>
     </section>
 
-    <section class="values-strip" aria-label="Valores de la marca">
-      <article><span>01</span><div><strong>Hecho a mano</strong><small>Con tiempo y dedicación</small></div></article>
-      <article><span>02</span><div><strong>Diseños únicos</strong><small>Cada pieza tiene carácter</small></div></article>
-      <article><span>03</span><div><strong>Detalles que enamoran</strong><small>Pañuelos, dijes y texturas</small></div></article>
-      <article><span>04</span><div><strong>Atención personal</strong><small>Te acompañamos a elegir</small></div></article>
-    </section>
+    <section class="values"><div class="shell values-inner">
+      <article class="value"><span>01</span><div><strong>Hecho a mano</strong><small>Con tiempo, cuidado y dedicación.</small></div></article>
+      <article class="value"><span>02</span><div><strong>Diseños únicos</strong><small>Cada pieza conserva su carácter.</small></div></article>
+      <article class="value"><span>03</span><div><strong>Detalles que enamoran</strong><small>Pañuelos, dijes y texturas.</small></div></article>
+      <article class="value"><span>04</span><div><strong>Atención personal</strong><small>Te ayudamos a elegir tu diseño.</small></div></article>
+    </div></section>
 
-    <section class="collection-section section-shell" id="coleccion">
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow">Colección Thania Álvarez</p>
-          <h2>Encuentra la pieza que se parezca a ti.</h2>
-        </div>
-        <p>Explora por estilo, guarda tus favoritas y envía tu selección directamente por WhatsApp para consultar disponibilidad y personalización.</p>
-      </div>
+    <section class="story" id="historia"><div class="shell story-grid">
+      <div class="story-image reveal"><img src="essence.webp" alt="Bolso artesanal Thania Álvarez"><div class="story-seal">Puntada a puntada<br>con amor</div></div>
+      <div class="story-copy reveal"><p class="eyebrow">Nuestra esencia</p><h2>No es solo un bolso. <span class="script">Es parte de ti.</span></h2><p>La colección nace del amor por el crochet y por esos objetos que se vuelven compañeros de vida. Los colores, las texturas y cada pequeño adorno se eligen para transformar una pieza funcional en algo profundamente personal.</p><div class="quote">“Cada puntada, una historia. Cada detalle, para ti.”</div><a class="button button-outline" href="#proceso">Conoce cómo pedir tu diseño</a></div>
+    </div></section>
 
+    <section class="catalog" id="coleccion"><div class="shell">
+      <div class="catalog-head reveal"><div><p class="eyebrow">Colección Thania Álvarez</p><h2>Encuentra la pieza que se <span class="script">parezca a ti.</span></h2></div><div><p>Explora los diseños, filtra por estilo y guarda tus favoritos. Al final puedes enviarnos tu selección directamente por WhatsApp.</p></div></div>
       <div class="catalog-tools reveal">
-        <label class="search-box">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="catalog-search" type="search" placeholder="Buscar un diseño…" autocomplete="off" />
-        </label>
-        <div class="filter-list" role="group" aria-label="Filtrar diseños">
-          <button class="filter-chip is-active" type="button" data-filter="all">Todos</button>
-          <button class="filter-chip" type="button" data-filter="intenso">Tonos intensos</button>
-          <button class="filter-chip" type="button" data-filter="natural">Naturales</button>
-          <button class="filter-chip" type="button" data-filter="floral">Florales</button>
-          <button class="filter-chip" type="button" data-filter="coleccion">Colecciones</button>
-        </div>
+        <div class="filters" aria-label="Filtrar diseños"><button class="filter active" data-filter="all">Todos</button><button class="filter" data-filter="floral">Florales</button><button class="filter" data-filter="elegante">Elegantes</button><button class="filter" data-filter="natural">Naturales</button><button class="filter" data-filter="clasico">Clásicos</button><button class="filter" data-filter="coleccion">Colecciones</button></div>
+        <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="searchInput" type="search" placeholder="Buscar un diseño…" autocomplete="off"></label>
       </div>
+      <div class="product-grid" id="productGrid"><article class="product-card" data-name="azalea" data-category="floral" data-id="azalea" data-title="Azalea" data-image="azalea.webp" data-tone="Rojo floral" data-desc="Vibrante y romántica. Una pieza en rojo intenso con girasoles que transmite alegría y carácter." data-details="Tejido a crochet · Pañuelo floral · Cadena y dije decorativo">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Azalea">
+          <img src="azalea.webp" alt="Bolso artesanal Azalea" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Azalea en favoritos" aria-pressed="false" data-favorite="azalea">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">01</span>
+      </div>
+      <div class="product-info">
+        <div><p>Rojo floral</p><h3>Azalea</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Azalea">↗</button>
+      </div>
+      <p class="product-description">Vibrante y romántica. Una pieza en rojo intenso con girasoles que transmite alegría y carácter.</p>
+    </article>
+<article class="product-card" data-name="isabella" data-category="elegante" data-id="isabella" data-title="Isabella" data-image="isabella.webp" data-tone="Negro esmeralda" data-desc="Elegancia profunda con acentos verde esmeralda y dorado. Diseñada para destacar con sofisticación." data-details="Tejido negro · Pañuelo estampado · Dije artesanal">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Isabella">
+          <img src="isabella.webp" alt="Bolso artesanal Isabella" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Isabella en favoritos" aria-pressed="false" data-favorite="isabella">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">02</span>
+      </div>
+      <div class="product-info">
+        <div><p>Negro esmeralda</p><h3>Isabella</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Isabella">↗</button>
+      </div>
+      <p class="product-description">Elegancia profunda con acentos verde esmeralda y dorado. Diseñada para destacar con sofisticación.</p>
+    </article>
+<article class="product-card" data-name="victoria" data-category="clasico" data-id="victoria" data-title="Victoria" data-image="victoria.webp" data-tone="Azul clásico" data-desc="Serena y atemporal. El azul intenso se equilibra con detalles blancos y un dije lleno de significado." data-details="Crochet azul · Asa forrada · Dije árbol de la vida">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Victoria">
+          <img src="victoria.webp" alt="Bolso artesanal Victoria" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Victoria en favoritos" aria-pressed="false" data-favorite="victoria">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">03</span>
+      </div>
+      <div class="product-info">
+        <div><p>Azul clásico</p><h3>Victoria</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Victoria">↗</button>
+      </div>
+      <p class="product-description">Serena y atemporal. El azul intenso se equilibra con detalles blancos y un dije lleno de significado.</p>
+    </article>
+<article class="product-card" data-name="zafiro" data-category="elegante" data-id="zafiro" data-title="Zafiro" data-image="zafiro.webp" data-tone="Borgoña" data-desc="Un tono joya para una pieza con presencia. Romántica, refinada y perfecta para ocasiones especiales." data-details="Tejido vino · Pañuelo de contraste · Cadena frontal">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Zafiro">
+          <img src="zafiro.webp" alt="Bolso artesanal Zafiro" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Zafiro en favoritos" aria-pressed="false" data-favorite="zafiro">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">04</span>
+      </div>
+      <div class="product-info">
+        <div><p>Borgoña</p><h3>Zafiro</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Zafiro">↗</button>
+      </div>
+      <p class="product-description">Un tono joya para una pieza con presencia. Romántica, refinada y perfecta para ocasiones especiales.</p>
+    </article>
+<article class="product-card" data-name="dalia" data-category="floral" data-id="dalia" data-title="Dalia" data-image="dalia.webp" data-tone="Sol dorado" data-desc="Luminosa y alegre. Girasoles, amarillo cálido y café se unen en una pieza que celebra el verano." data-details="Tejido bicolor · Estampado de girasoles · Dije decorativo">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Dalia">
+          <img src="dalia.webp" alt="Bolso artesanal Dalia" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Dalia en favoritos" aria-pressed="false" data-favorite="dalia">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">05</span>
+      </div>
+      <div class="product-info">
+        <div><p>Sol dorado</p><h3>Dalia</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Dalia">↗</button>
+      </div>
+      <p class="product-description">Luminosa y alegre. Girasoles, amarillo cálido y café se unen en una pieza que celebra el verano.</p>
+    </article>
+<article class="product-card" data-name="jazmín" data-category="coleccion" data-id="jazmin" data-title="Jazmín" data-image="jazmin.webp" data-tone="Colección de color" data-desc="Una familia de bolsos compactos con asas metálicas y colores intensos para elegir el que más se parezca a ti." data-details="Asas circulares · Distintos colores · Pañuelos coordinados">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Jazmín">
+          <img src="jazmin.webp" alt="Bolso artesanal Jazmín" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Jazmín en favoritos" aria-pressed="false" data-favorite="jazmin">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">06</span>
+      </div>
+      <div class="product-info">
+        <div><p>Colección de color</p><h3>Jazmín</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Jazmín">↗</button>
+      </div>
+      <p class="product-description">Una familia de bolsos compactos con asas metálicas y colores intensos para elegir el que más se parezca a ti.</p>
+    </article>
+<article class="product-card" data-name="olivia" data-category="natural" data-id="olivia" data-title="Olivia" data-image="olivia.webp" data-tone="Verde bosque" data-desc="Fresca y versátil. Turquesa, negro y dorado crean un equilibrio entre naturaleza y elegancia." data-details="Tejido en contraste · Pañuelo verde · Borla decorativa">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Olivia">
+          <img src="olivia.webp" alt="Bolso artesanal Olivia" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Olivia en favoritos" aria-pressed="false" data-favorite="olivia">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">07</span>
+      </div>
+      <div class="product-info">
+        <div><p>Verde bosque</p><h3>Olivia</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Olivia">↗</button>
+      </div>
+      <p class="product-description">Fresca y versátil. Turquesa, negro y dorado crean un equilibrio entre naturaleza y elegancia.</p>
+    </article>
+<article class="product-card" data-name="valentina" data-category="coleccion" data-id="valentina" data-title="Valentina" data-image="valentina.webp" data-tone="Romántica" data-desc="Una colección femenina y juguetona, pensada para combinar colores, pañuelos y personalidad." data-details="Varios tonos · Formato compacto · Detalles personalizables">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Valentina">
+          <img src="valentina.webp" alt="Bolso artesanal Valentina" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Valentina en favoritos" aria-pressed="false" data-favorite="valentina">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">08</span>
+      </div>
+      <div class="product-info">
+        <div><p>Romántica</p><h3>Valentina</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Valentina">↗</button>
+      </div>
+      <p class="product-description">Una colección femenina y juguetona, pensada para combinar colores, pañuelos y personalidad.</p>
+    </article>
+<article class="product-card" data-name="luna" data-category="floral" data-id="luna" data-title="Luna" data-image="luna.webp" data-tone="Turquesa girasol" data-desc="Una pieza alegre y artesanal con un girasol tejido que se convierte en el centro de todas las miradas." data-details="Aplicación floral tejida · Asa estructurada · Crochet bicolor">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Luna">
+          <img src="luna.webp" alt="Bolso artesanal Luna" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Luna en favoritos" aria-pressed="false" data-favorite="luna">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">09</span>
+      </div>
+      <div class="product-info">
+        <div><p>Turquesa girasol</p><h3>Luna</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Luna">↗</button>
+      </div>
+      <p class="product-description">Una pieza alegre y artesanal con un girasol tejido que se convierte en el centro de todas las miradas.</p>
+    </article>
+<article class="product-card" data-name="amatista" data-category="elegante" data-id="amatista" data-title="Amatista" data-image="amatista.webp" data-tone="Negro artístico" data-desc="Moderna y expresiva. El negro profundo se transforma con pinceladas blancas y rojas." data-details="Tejido negro · Pañuelo abstracto · Dije central">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Amatista">
+          <img src="amatista.webp" alt="Bolso artesanal Amatista" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Amatista en favoritos" aria-pressed="false" data-favorite="amatista">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">10</span>
+      </div>
+      <div class="product-info">
+        <div><p>Negro artístico</p><h3>Amatista</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Amatista">↗</button>
+      </div>
+      <p class="product-description">Moderna y expresiva. El negro profundo se transforma con pinceladas blancas y rojas.</p>
+    </article>
+<article class="product-card" data-name="noir" data-category="natural" data-id="noir" data-title="Noir" data-image="noir.webp" data-tone="Tierra y vino" data-desc="Cálida, original y con volumen. El gran girasol tejido convierte este bolso en una pieza única." data-details="Aplicación floral · Tonos tierra · Silueta estructurada">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Noir">
+          <img src="noir.webp" alt="Bolso artesanal Noir" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Noir en favoritos" aria-pressed="false" data-favorite="noir">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">11</span>
+      </div>
+      <div class="product-info">
+        <div><p>Tierra y vino</p><h3>Noir</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Noir">↗</button>
+      </div>
+      <p class="product-description">Cálida, original y con volumen. El gran girasol tejido convierte este bolso en una pieza única.</p>
+    </article>
+<article class="product-card" data-name="rosé" data-category="coleccion" data-id="rose" data-title="Rosé" data-image="rose.webp" data-tone="Selección romántica" data-desc="Una línea de siluetas suaves en vino, rosa, oliva y marfil, creada para expresar distintos estados de ánimo." data-details="Variedad de tonos · Borlas y dijes · Diseño femenino">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Rosé">
+          <img src="rose.webp" alt="Bolso artesanal Rosé" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Rosé en favoritos" aria-pressed="false" data-favorite="rose">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">12</span>
+      </div>
+      <div class="product-info">
+        <div><p>Selección romántica</p><h3>Rosé</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Rosé">↗</button>
+      </div>
+      <p class="product-description">Una línea de siluetas suaves en vino, rosa, oliva y marfil, creada para expresar distintos estados de ánimo.</p>
+    </article>
+<article class="product-card" data-name="gardenia" data-category="clasico" data-id="gardenia" data-title="Gardenia" data-image="gardenia.webp" data-tone="Oliva clásico" data-desc="Sobria, funcional y llena de detalles. Un diseño fácil de combinar para acompañarte todos los días." data-details="Crochet oliva y negro · Borla frontal · Asa compacta">
+      <div class="product-media">
+        <button class="product-open" type="button" aria-label="Ver detalles de Gardenia">
+          <img src="gardenia.webp" alt="Bolso artesanal Gardenia" loading="lazy">
+        </button>
+        <button class="heart" type="button" aria-label="Guardar Gardenia en favoritos" aria-pressed="false" data-favorite="gardenia">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.6 5.6 0 0 0-7.9 0L12 5.7l-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.3a5.6 5.6 0 0 0 0-7.9Z"/></svg>
+        </button>
+        <span class="product-number">13</span>
+      </div>
+      <div class="product-info">
+        <div><p>Oliva clásico</p><h3>Gardenia</h3></div>
+        <button class="arrow product-open" type="button" aria-label="Abrir Gardenia">↗</button>
+      </div>
+      <p class="product-description">Sobria, funcional y llena de detalles. Un diseño fácil de combinar para acompañarte todos los días.</p>
+    </article></div>
+      <div class="empty" id="emptyState"><h3>No encontramos ese diseño</h3><p>Prueba con otro nombre o selecciona una categoría distinta.</p></div>
+    </div></section>
 
-      <div class="catalog-meta reveal">
-        <p><span id="result-count">13</span> diseños</p>
-        <p class="catalog-hint">Toca una imagen para verla completa</p>
-      </div>
+    <section class="editorial"><div class="shell editorial-grid">
+      <article class="editorial-main reveal"><img src="editorial-dark.webp" alt="Bolso negro artesanal"><div class="editorial-caption"><span>Elegancia natural</span><h3>Piezas con presencia propia.</h3></div></article>
+      <div class="editorial-stack"><article class="reveal"><img src="editorial-blue.webp" alt="Bolso azul artesanal"><div class="editorial-caption"><span>Color con intención</span><h3>Diseña tu destino.</h3></div></article><article class="reveal"><img src="editorial-natural.webp" alt="Bolsos artesanales en tonos naturales"><div class="editorial-caption"><span>Artesanía que enamora</span><h3>Detalles para recordar.</h3></div></article></div>
+    </div></section>
 
-      <div class="product-grid" id="product-grid" aria-live="polite"></div>
-      <div class="empty-state" id="empty-state" hidden>
-        <span>♡</span>
-        <h3>No encontramos ese diseño</h3>
-        <p>Prueba con otro nombre o selecciona una categoría distinta.</p>
-      </div>
-    </section>
+    <section class="process" id="proceso"><div class="shell">
+      <div class="process-head reveal"><p class="eyebrow">Tu pieza, a tu manera</p><h2>Así comienza tu <span class="script">historia.</span></h2><p>Un proceso sencillo y cercano para ayudarte a elegir el bolso ideal.</p></div>
+      <div class="steps"><article class="step reveal"><span>01</span><h3>Elige tu diseño</h3><p>Explora la colección y guarda las piezas que más te gusten.</p></article><article class="step reveal"><span>02</span><h3>Escríbenos</h3><p>Envía tu selección por WhatsApp y consulta disponibilidad.</p></article><article class="step reveal"><span>03</span><h3>Define los detalles</h3><p>Revisa opciones de colores, pañuelos y acabados para hacerlo tuyo.</p></article><article class="step reveal"><span>04</span><h3>Recibe algo único</h3><p>Tu bolso se prepara con el cuidado que merece una pieza artesanal.</p></article></div>
+    </div></section>
 
-    <section class="editorial-band" id="esencia">
-      <div class="editorial-image reveal">
-        <img src="assets/images/essence.webp" alt="Bolso artesanal en tonos café con pañuelo rojo" loading="lazy" />
-      </div>
-      <div class="editorial-copy reveal">
-        <p class="eyebrow">Nuestra esencia</p>
-        <h2>No es solo un bolso. Es parte de ti.</h2>
-        <p>La colección nace del amor por el crochet y por esos objetos que se vuelven compañeros de vida. Cada color, textura y adorno se elige para transformar una pieza funcional en algo profundamente personal.</p>
-        <blockquote>“Cada puntada, una historia. Cada detalle, para ti.”</blockquote>
-        <a class="text-link" href="#proceso">Conoce cómo pedir tu diseño <span>→</span></a>
-      </div>
-    </section>
-
-    <section class="mood-gallery section-shell" aria-label="Galería editorial">
-      <div class="mood-card mood-card-large reveal">
-        <img src="assets/images/editorial-dark.webp" alt="Bolso negro de crochet con pañuelo verde" loading="lazy" />
-        <div><span>Elegancia natural</span><strong>Piezas con presencia propia</strong></div>
-      </div>
-      <div class="mood-card reveal">
-        <img src="assets/images/editorial-blue.webp" alt="Bolso azul de crochet con detalle de colibrí" loading="lazy" />
-        <div><span>Color con intención</span><strong>Diseña tu destino</strong></div>
-      </div>
-      <div class="mood-card reveal">
-        <img src="assets/images/editorial-natural.webp" alt="Selección de bolsos artesanales en tonos tierra" loading="lazy" />
-        <div><span>Artesanía que enamora</span><strong>Detalles para regalar</strong></div>
-      </div>
-    </section>
-
-    <section class="process-section section-shell" id="proceso">
-      <div class="section-heading centered reveal">
-        <p class="eyebrow">Tu pieza, a tu manera</p>
-        <h2>Así comienza tu historia.</h2>
-        <p>Un proceso sencillo y cercano para ayudarte a elegir el bolso ideal.</p>
-      </div>
-      <div class="process-grid">
-        <article class="process-card reveal"><span>01</span><h3>Elige tu diseño</h3><p>Explora la colección y guarda las piezas que más te gusten.</p></article>
-        <article class="process-card reveal"><span>02</span><h3>Escríbenos</h3><p>Envía tu selección por WhatsApp y consulta disponibilidad.</p></article>
-        <article class="process-card reveal"><span>03</span><h3>Define los detalles</h3><p>Revisa opciones de colores, pañuelos y acabados para hacerlo tuyo.</p></article>
-        <article class="process-card reveal"><span>04</span><h3>Recibe algo único</h3><p>Tu bolso se prepara con el cuidado que merece una pieza artesanal.</p></article>
-      </div>
-    </section>
-
-    <section class="contact-section section-shell" id="contacto">
-      <div class="contact-card reveal">
-        <div class="contact-copy">
-          <p class="eyebrow">Hablemos de tu próximo bolso</p>
-          <h2>¿Cuál diseño te hizo decir “ese es para mí”?</h2>
-          <p>Cuéntanos cuál te gustó y te ayudamos a revisar opciones, detalles y disponibilidad.</p>
-          <a class="button button-light" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20vi%20tu%20cat%C3%A1logo%20digital%20y%20quiero%20consultar%20por%20un%20bolso." target="_blank" rel="noopener">Escribir por WhatsApp</a>
-        </div>
-        <div class="contact-details">
-          <a href="tel:+529981140725"><span>WhatsApp</span><strong>+52 998 114 07 25</strong></a>
-          <a href="https://www.instagram.com/taniaalvarez3887/" target="_blank" rel="noopener"><span>Instagram</span><strong>@taniaalvarez3887</strong></a>
-          <a href="https://www.tiktok.com/@taniaalvarez283" target="_blank" rel="noopener"><span>TikTok</span><strong>@taniaalvarez283</strong></a>
-          <div><span>Facebook</span><strong>Tania Álvarez</strong></div>
-        </div>
-      </div>
-    </section>
+    <section class="contact" id="contacto"><div class="shell contact-card reveal">
+      <div class="contact-copy"><p class="eyebrow">Hablemos de tu próximo bolso</p><h2>¿Cuál diseño te hizo decir “ese es para mí”?</h2><p>Cuéntanos cuál te gustó y te ayudamos a revisar disponibilidad, combinaciones y detalles.</p><a class="button" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20vi%20tu%20cat%C3%A1logo%20digital%20y%20quiero%20consultar%20por%20un%20bolso." target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+      <div class="contact-image"><img src="olivia.webp" alt="Bolso Olivia"></div>
+    </div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-brand">
-      <span class="brand-mark">TA</span>
-      <div><strong>Thania Álvarez</strong><small>Hecho a mano, hecho con amor.</small></div>
-    </div>
-    <p>La elegancia nace de los detalles.</p>
-    <p class="footer-copy">© <span id="current-year"></span> Thania Álvarez</p>
-  </footer>
+  <footer><div class="shell footer-inner"><div class="brand"><span class="monogram">TA</span><span><strong>Thania Álvarez</strong><small>hecho a mano · hecho con amor</small></span></div><p>© <span id="year"></span> · La elegancia nace de los detalles.</p></div></footer>
 
-  <a class="whatsapp-float" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20vi%20tu%20cat%C3%A1logo%20digital." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.4 23.5l5.9-1.6A11.8 11.8 0 0 0 20.5 3.5Zm-8.4 17.2a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.5.9.9-3.4-.2-.4A9.7 9.7 0 1 1 12.1 20.7Zm5.3-7.2c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.7-3.1-2-4-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6L9.2 6c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.8.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.2-.2-.4-.3-1-.5Z"/></svg>
-  </a>
+  <a class="whatsapp-float" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20vi%20tu%20cat%C3%A1logo%20digital." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a9.7 9.7 0 0 0-8.3 14.7L2.4 22l5.4-1.4A9.7 9.7 0 1 0 12 2Zm0 17.6a7.7 7.7 0 0 1-3.9-1.1l-.3-.2-3.2.9.9-3.1-.2-.3A7.7 7.7 0 1 1 12 19.6Zm4.2-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.7.8c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.2-2.8-.2-.2 0-.4.1-.5l.5-.6c.1-.2.2-.4.1-.6L9.6 8c-.1-.3-.3-.4-.6-.4h-.5c-.3 0-.6.1-.8.4-.8.8-1.1 1.8-.8 2.9.7 2.8 2.9 5 5.6 5.8 1 .3 2 .2 2.9-.5.4-.3.7-.8.8-1.3.1-.4.1-.8 0-1.1Z"/></svg></a>
 
-  <dialog class="product-modal" id="product-modal">
-    <button class="modal-close icon-button" type="button" aria-label="Cerrar detalle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
-    </button>
-    <div class="modal-layout">
-      <div class="modal-image-wrap"><img id="modal-image" src="" alt="" /></div>
-      <div class="modal-content">
-        <p class="eyebrow" id="modal-category"></p>
-        <h2 id="modal-title"></h2>
-        <p id="modal-description"></p>
-        <ul id="modal-features"></ul>
-        <div class="modal-actions">
-          <a class="button button-primary" id="modal-whatsapp" href="#" target="_blank" rel="noopener">Consultar este diseño</a>
-          <button class="button button-ghost modal-favorite" id="modal-favorite" type="button">Guardar en favoritos</button>
-        </div>
-        <small>Disponibilidad y opciones de personalización sujetas a confirmación.</small>
-      </div>
-    </div>
-  </dialog>
+  <dialog id="productModal"><div class="modal-grid"><div class="modal-media"><img id="modalImage" src="" alt=""></div><div class="modal-copy"><button class="modal-close" id="modalClose" aria-label="Cerrar">×</button><p class="eyebrow" id="modalTone"></p><h2 id="modalTitle"></h2><p id="modalDescription"></p><div class="modal-details" id="modalDetails"></div><div class="modal-actions"><a class="button button-primary" id="modalWhatsapp" target="_blank" rel="noopener">Consultar este diseño por WhatsApp</a><button class="button button-outline modal-favorite" id="modalFavorite">Guardar en favoritos</button></div></div></div></dialog>
 
-  <aside class="favorites-drawer" id="favorites-drawer" aria-hidden="true" aria-label="Diseños favoritos">
-    <div class="drawer-header">
-      <div><p class="eyebrow">Tu selección</p><h2>Favoritos</h2></div>
-      <button class="drawer-close icon-button" type="button" aria-label="Cerrar favoritos">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
-      </button>
-    </div>
-    <div class="favorites-list" id="favorites-list"></div>
-    <div class="drawer-empty" id="drawer-empty"><span>♡</span><p>Aún no has guardado diseños.</p></div>
-    <div class="drawer-footer">
-      <a class="button button-primary is-disabled" id="favorites-whatsapp" href="#" target="_blank" rel="noopener">Consultar mi selección</a>
-      <button class="clear-favorites" id="clear-favorites" type="button">Limpiar favoritos</button>
-    </div>
-  </aside>
-  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <div class="panel-overlay" id="panelOverlay"></div>
+  <aside class="favorites-panel" id="favoritesPanel" aria-hidden="true"><div class="panel-head"><div><p class="eyebrow">Tu selección</p><h2>Favoritos</h2></div><button class="panel-close" id="panelClose" aria-label="Cerrar">×</button></div><div class="favorite-list" id="favoriteList"></div><p class="panel-empty" id="panelEmpty">Todavía no has guardado ningún diseño.<br>Toca el corazón de tus bolsos favoritos.</p><div class="panel-actions"><a class="button button-primary" id="favoritesWhatsapp" href="#">Enviar mi selección por WhatsApp</a><button class="button button-outline" id="clearFavorites">Limpiar favoritos</button></div></aside>
 
-  <audio id="ambient-audio" src="assets/audio/atelier-ambient.wav" loop preload="none"></audio>
+  <audio id="ambientAudio" loop preload="none"><source src="musica-ambiente.wav" type="audio/wav"></audio>
+  <script>
+    const cards=[...document.querySelectorAll('.product-card')];
+    const filters=[...document.querySelectorAll('.filter')];
+    const searchInput=document.getElementById('searchInput');
+    const emptyState=document.getElementById('emptyState');
+    let currentFilter='all';
+    function updateCatalog(){
+      const q=searchInput.value.trim().toLocaleLowerCase('es-MX');let visible=0;
+      cards.forEach(card=>{const show=(currentFilter==='all'||card.dataset.category===currentFilter)&&card.dataset.name.includes(q);card.hidden=!show;if(show)visible++;});
+      emptyState.classList.toggle('show',visible===0);
+    }
+    filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));btn.classList.add('active');currentFilter=btn.dataset.filter;updateCatalog();}));
+    searchInput.addEventListener('input',updateCatalog);
+
+    const modal=document.getElementById('productModal');
+    const modalImage=document.getElementById('modalImage');
+    const modalTone=document.getElementById('modalTone');
+    const modalTitle=document.getElementById('modalTitle');
+    const modalDescription=document.getElementById('modalDescription');
+    const modalDetails=document.getElementById('modalDetails');
+    const modalWhatsapp=document.getElementById('modalWhatsapp');
+    const modalFavorite=document.getElementById('modalFavorite');
+    let activeCard=null;
+    function openProduct(card){activeCard=card;modalImage.src=card.dataset.image;modalImage.alt='Bolso '+card.dataset.title;modalTone.textContent=card.dataset.tone;modalTitle.textContent=card.dataset.title;modalDescription.textContent=card.dataset.desc;modalDetails.textContent=card.dataset.details;modalWhatsapp.href='https://wa.me/529981140725?text='+encodeURIComponent('Hola Thania, me gustó el diseño '+card.dataset.title+' de tu catálogo. ¿Me compartes disponibilidad y opciones?');syncModalFavorite();modal.showModal();}
+    cards.forEach(card=>card.querySelectorAll('.product-open').forEach(btn=>btn.addEventListener('click',()=>openProduct(card))));
+    document.getElementById('modalClose').addEventListener('click',()=>modal.close());
+    modal.addEventListener('click',e=>{const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close();});
+
+    function readStoredFavorites(){try{return JSON.parse(localStorage.getItem('thania-favorites')||'[]')}catch(error){return []}}
+    let favorites=new Set(readStoredFavorites());
+    const favoriteCount=document.getElementById('favoriteCount');
+    const panel=document.getElementById('favoritesPanel');
+    const overlay=document.getElementById('panelOverlay');
+    const favoriteList=document.getElementById('favoriteList');
+    const panelEmpty=document.getElementById('panelEmpty');
+    const favoritesWhatsapp=document.getElementById('favoritesWhatsapp');
+    function saveFavorites(){try{localStorage.setItem('thania-favorites',JSON.stringify([...favorites]))}catch(error){}syncFavorites();}
+    function toggleFavorite(id){favorites.has(id)?favorites.delete(id):favorites.add(id);saveFavorites();}
+    function syncModalFavorite(){if(!activeCard)return;const on=favorites.has(activeCard.dataset.id);modalFavorite.textContent=on?'Quitar de favoritos':'Guardar en favoritos';}
+    function syncFavorites(){
+      favoriteCount.textContent=favorites.size;
+      document.querySelectorAll('[data-favorite]').forEach(btn=>{const on=favorites.has(btn.dataset.favorite);btn.classList.toggle('active',on);btn.setAttribute('aria-pressed',String(on));});
+      const selected=cards.filter(card=>favorites.has(card.dataset.id));
+      favoriteList.innerHTML=selected.map(card=>`<article class="favorite-item"><img src="${card.dataset.image}" alt=""><div><strong>${card.dataset.title}</strong><small>${card.dataset.tone}</small></div><button data-remove="${card.dataset.id}" aria-label="Quitar">×</button></article>`).join('');
+      panelEmpty.style.display=selected.length?'none':'block';favoriteList.style.display=selected.length?'grid':'none';
+      favoritesWhatsapp.style.opacity=selected.length?'1':'.45';favoritesWhatsapp.style.pointerEvents=selected.length?'auto':'none';
+      favoritesWhatsapp.href=selected.length?'https://wa.me/529981140725?text='+encodeURIComponent('Hola Thania, guardé estos diseños de tu catálogo: '+selected.map(c=>c.dataset.title).join(', ')+'. ¿Me compartes disponibilidad?'):'#';syncModalFavorite();
+    }
+    document.querySelectorAll('[data-favorite]').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();toggleFavorite(btn.dataset.favorite);}));
+    modalFavorite.addEventListener('click',()=>activeCard&&toggleFavorite(activeCard.dataset.id));
+    favoriteList.addEventListener('click',e=>{const btn=e.target.closest('[data-remove]');if(btn)toggleFavorite(btn.dataset.remove);});
+    function openPanel(){panel.classList.add('open');overlay.classList.add('show');panel.setAttribute('aria-hidden','false');}
+    function closePanel(){panel.classList.remove('open');overlay.classList.remove('show');panel.setAttribute('aria-hidden','true');}
+    document.getElementById('favoritesButton').addEventListener('click',openPanel);document.getElementById('panelClose').addEventListener('click',closePanel);overlay.addEventListener('click',closePanel);
+    document.getElementById('clearFavorites').addEventListener('click',()=>{favorites.clear();saveFavorites();});
+
+    const audio=document.getElementById('ambientAudio'),soundButton=document.getElementById('soundButton');
+    soundButton.addEventListener('click',async()=>{try{if(audio.paused){audio.volume=.28;await audio.play();soundButton.style.background='var(--forest)';soundButton.style.color='#fff';soundButton.title='Pausar música';}else{audio.pause();soundButton.style.background='';soundButton.style.color='';soundButton.title='Música ambiental';}}catch(e){console.warn(e);}});
+    const menuButton=document.getElementById('menuButton'),nav=document.getElementById('nav');menuButton.addEventListener('click',()=>nav.classList.toggle('open'));nav.addEventListener('click',()=>nav.classList.remove('open'));
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});syncFavorites();
+  </script>
 </body>
 </html>
