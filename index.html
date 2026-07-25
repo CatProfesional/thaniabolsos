@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#17362f" />
+  <meta name="description" content="Catálogo digital de bolsos artesanales tejidos a crochet por Thania Álvarez. Piezas únicas, hechas a mano y con amor." />
+  <meta property="og:title" content="Thania Álvarez · Crochet con amor" />
+  <meta property="og:description" content="La elegancia nace de los detalles. Descubre bolsos artesanales tejidos a mano." />
+  <meta property="og:image" content="assets/images/hero.webp" />
+  <title>Thania Álvarez · Catálogo artesanal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="inicio">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark" aria-hidden="true">TA</span>
+      <span class="brand-copy">
+        <strong>Thania Álvarez</strong>
+        <small>hecho a mano · hecho con amor</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle icon-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+      <a href="#coleccion">Colección</a>
+      <a href="#esencia">Nuestra esencia</a>
+      <a href="#proceso">Cómo pedir</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="sound-toggle icon-button" type="button" aria-label="Reproducir música ambiental" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+      </button>
+      <button class="favorites-trigger" type="button" aria-label="Ver diseños favoritos">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+        <span class="favorite-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Artesanía que cuenta historias</p>
+        <h1>La elegancia nace de los <em>detalles.</em></h1>
+        <p class="hero-description">Bolsos tejidos a crochet, creados puntada a puntada para mujeres que valoran lo auténtico, lo especial y lo hecho con intención.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#coleccion">Descubrir la colección</a>
+          <a class="button button-ghost" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20me%20gustar%C3%ADa%20conocer%20las%20opciones%20de%20bolsos%20a%20crochet." target="_blank" rel="noopener">Crear mi pieza</a>
+        </div>
+        <div class="hero-note">
+          <span class="thread-line" aria-hidden="true"></span>
+          <p>Cada pieza puede tener pequeñas variaciones: esa es la firma de lo verdaderamente artesanal.</p>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-frame">
+          <img src="assets/images/hero.webp" alt="Colección de bolsos tejidos a crochet de Thania Álvarez" fetchpriority="high" />
+          <div class="hero-shine" aria-hidden="true"></div>
+        </div>
+        <div class="floating-seal" aria-hidden="true">
+          <span>100%</span>
+          <small>hecho a mano</small>
+        </div>
+        <p class="vertical-caption">CREA · ACTÚA · TRANSFORMA</p>
+      </div>
+    </section>
+
+    <section class="values-strip" aria-label="Valores de la marca">
+      <article><span>01</span><div><strong>Hecho a mano</strong><small>Con tiempo y dedicación</small></div></article>
+      <article><span>02</span><div><strong>Diseños únicos</strong><small>Cada pieza tiene carácter</small></div></article>
+      <article><span>03</span><div><strong>Detalles que enamoran</strong><small>Pañuelos, dijes y texturas</small></div></article>
+      <article><span>04</span><div><strong>Atención personal</strong><small>Te acompañamos a elegir</small></div></article>
+    </section>
+
+    <section class="collection-section section-shell" id="coleccion">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Colección Thania Álvarez</p>
+          <h2>Encuentra la pieza que se parezca a ti.</h2>
+        </div>
+        <p>Explora por estilo, guarda tus favoritas y envía tu selección directamente por WhatsApp para consultar disponibilidad y personalización.</p>
+      </div>
+
+      <div class="catalog-tools reveal">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="catalog-search" type="search" placeholder="Buscar un diseño…" autocomplete="off" />
+        </label>
+        <div class="filter-list" role="group" aria-label="Filtrar diseños">
+          <button class="filter-chip is-active" type="button" data-filter="all">Todos</button>
+          <button class="filter-chip" type="button" data-filter="intenso">Tonos intensos</button>
+          <button class="filter-chip" type="button" data-filter="natural">Naturales</button>
+          <button class="filter-chip" type="button" data-filter="floral">Florales</button>
+          <button class="filter-chip" type="button" data-filter="coleccion">Colecciones</button>
+        </div>
+      </div>
+
+      <div class="catalog-meta reveal">
+        <p><span id="result-count">13</span> diseños</p>
+        <p class="catalog-hint">Toca una imagen para verla completa</p>
+      </div>
+
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span>♡</span>
+        <h3>No encontramos ese diseño</h3>
+        <p>Prueba con otro nombre o selecciona una categoría distinta.</p>
+      </div>
+    </section>
+
+    <section class="editorial-band" id="esencia">
+      <div class="editorial-image reveal">
+        <img src="assets/images/essence.webp" alt="Bolso artesanal en tonos café con pañuelo rojo" loading="lazy" />
+      </div>
+      <div class="editorial-copy reveal">
+        <p class="eyebrow">Nuestra esencia</p>
+        <h2>No es solo un bolso. Es parte de ti.</h2>
+        <p>La colección nace del amor por el crochet y por esos objetos que se vuelven compañeros de vida. Cada color, textura y adorno se elige para transformar una pieza funcional en algo profundamente personal.</p>
+        <blockquote>“Cada puntada, una historia. Cada detalle, para ti.”</blockquote>
+        <a class="text-link" href="#proceso">Conoce cómo pedir tu diseño <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="mood-gallery section-shell" aria-label="Galería editorial">
+      <div class="mood-card mood-card-large reveal">
+        <img src="assets/images/editorial-dark.webp" alt="Bolso negro de crochet con pañuelo verde" loading="lazy" />
+        <div><span>Elegancia natural</span><strong>Piezas con presencia propia</strong></div>
+      </div>
+      <div class="mood-card reveal">
+        <img src="assets/images/editorial-blue.webp" alt="Bolso azul de crochet con detalle de colibrí" loading="lazy" />
+        <div><span>Color con intención</span><strong>Diseña tu destino</strong></div>
+      </div>
+      <div class="mood-card reveal">
+        <img src="assets/images/editorial-natural.webp" alt="Selección de bolsos artesanales en tonos tierra" loading="lazy" />
+        <div><span>Artesanía que enamora</span><strong>Detalles para regalar</strong></div>
+      </div>
+    </section>
+
+    <section class="process-section section-shell" id="proceso">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Tu pieza, a tu manera</p>
+        <h2>Así comienza tu historia.</h2>
+        <p>Un proceso sencillo y cercano para ayudarte a elegir el bolso ideal.</p>
+      </div>
+      <div class="process-grid">
+        <article class="process-card reveal"><span>01</span><h3>Elige tu diseño</h3><p>Explora la colección y guarda las piezas que más te gusten.</p></article>
+        <article class="process-card reveal"><span>02</span><h3>Escríbenos</h3><p>Envía tu selección por WhatsApp y consulta disponibilidad.</p></article>
+        <article class="process-card reveal"><span>03</span><h3>Define los detalles</h3><p>Revisa opciones de colores, pañuelos y acabados para hacerlo tuyo.</p></article>
+        <article class="process-card reveal"><span>04</span><h3>Recibe algo único</h3><p>Tu bolso se prepara con el cuidado que merece una pieza artesanal.</p></article>
+      </div>
+    </section>
+
+    <section class="contact-section section-shell" id="contacto">
+      <div class="contact-card reveal">
+        <div class="contact-copy">
+          <p class="eyebrow">Hablemos de tu próximo bolso</p>
+          <h2>¿Cuál diseño te hizo decir “ese es para mí”?</h2>
+          <p>Cuéntanos cuál te gustó y te ayudamos a revisar opciones, detalles y disponibilidad.</p>
+          <a class="button button-light" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20vi%20tu%20cat%C3%A1logo%20digital%20y%20quiero%20consultar%20por%20un%20bolso." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+        <div class="contact-details">
+          <a href="tel:+529981140725"><span>WhatsApp</span><strong>+52 998 114 07 25</strong></a>
+          <a href="https://www.instagram.com/taniaalvarez3887/" target="_blank" rel="noopener"><span>Instagram</span><strong>@taniaalvarez3887</strong></a>
+          <a href="https://www.tiktok.com/@taniaalvarez283" target="_blank" rel="noopener"><span>TikTok</span><strong>@taniaalvarez283</strong></a>
+          <div><span>Facebook</span><strong>Tania Álvarez</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <span class="brand-mark">TA</span>
+      <div><strong>Thania Álvarez</strong><small>Hecho a mano, hecho con amor.</small></div>
+    </div>
+    <p>La elegancia nace de los detalles.</p>
+    <p class="footer-copy">© <span id="current-year"></span> Thania Álvarez</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/529981140725?text=Hola%20Thania%2C%20vi%20tu%20cat%C3%A1logo%20digital." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.4 23.5l5.9-1.6A11.8 11.8 0 0 0 20.5 3.5Zm-8.4 17.2a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.5.9.9-3.4-.2-.4A9.7 9.7 0 1 1 12.1 20.7Zm5.3-7.2c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.7-3.1-2-4-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6L9.2 6c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.8.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.2-.2-.4-.3-1-.5Z"/></svg>
+  </a>
+
+  <dialog class="product-modal" id="product-modal">
+    <button class="modal-close icon-button" type="button" aria-label="Cerrar detalle">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="modal-layout">
+      <div class="modal-image-wrap"><img id="modal-image" src="" alt="" /></div>
+      <div class="modal-content">
+        <p class="eyebrow" id="modal-category"></p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <ul id="modal-features"></ul>
+        <div class="modal-actions">
+          <a class="button button-primary" id="modal-whatsapp" href="#" target="_blank" rel="noopener">Consultar este diseño</a>
+          <button class="button button-ghost modal-favorite" id="modal-favorite" type="button">Guardar en favoritos</button>
+        </div>
+        <small>Disponibilidad y opciones de personalización sujetas a confirmación.</small>
+      </div>
+    </div>
+  </dialog>
+
+  <aside class="favorites-drawer" id="favorites-drawer" aria-hidden="true" aria-label="Diseños favoritos">
+    <div class="drawer-header">
+      <div><p class="eyebrow">Tu selección</p><h2>Favoritos</h2></div>
+      <button class="drawer-close icon-button" type="button" aria-label="Cerrar favoritos">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="favorites-list" id="favorites-list"></div>
+    <div class="drawer-empty" id="drawer-empty"><span>♡</span><p>Aún no has guardado diseños.</p></div>
+    <div class="drawer-footer">
+      <a class="button button-primary is-disabled" id="favorites-whatsapp" href="#" target="_blank" rel="noopener">Consultar mi selección</a>
+      <button class="clear-favorites" id="clear-favorites" type="button">Limpiar favoritos</button>
+    </div>
+  </aside>
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+
+  <audio id="ambient-audio" src="assets/audio/atelier-ambient.wav" loop preload="none"></audio>
+</body>
+</html>
